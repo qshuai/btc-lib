@@ -14,7 +14,7 @@ func UnserializeTx(rawtx string) (*wire.MsgTx, error) {
 	}
 
 	var transaction wire.MsgTx
-	buf := bytes.NewBuffer(make([]byte, 0, len(b)))
+	buf := bytes.NewBuffer(b)
 	err = transaction.Deserialize(buf)
 	if err != nil {
 		return nil, err
